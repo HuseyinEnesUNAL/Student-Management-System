@@ -60,9 +60,22 @@ int main() {
             break;
         }
 
-        case 2:
-            cout << "List students selected\n";
-            break;
+       case 2: {
+    if (students.empty()) {
+        cout << "No students found.\n";
+    } else {
+        cout << "\n===== STUDENT LIST =====\n";
+
+        for (int i = 0; i < students.size(); i++) {
+            cout << "ID: " << students[i].id << endl;
+            cout << "Name: " << students[i].name << endl;
+            cout << "Department: " << students[i].department << endl;
+            cout << "Grade: " << students[i].grade << endl;
+            cout << "------------------------\n";
+        }
+    }
+    break;
+}
 
         case 3:
             cout << "Search student selected\n";
