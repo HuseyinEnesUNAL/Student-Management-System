@@ -37,21 +37,45 @@ int main() {
         cin >> choice;
 
         switch (choice) {
-        case 1:
-            cout << "Add student selected\n";
+        case 1: {
+            int id;
+            string name, department;
+            double grade;
+
+            cout << "Enter student ID: ";
+            cin >> id;
+
+            cout << "Enter student name: ";
+            cin >> name;
+
+            cout << "Enter department: ";
+            cin >> department;
+
+            cout << "Enter grade: ";
+            cin >> grade;
+
+            students.push_back(Student(id, name, department, grade));
+
+            cout << "Student added successfully!\n";
             break;
+        }
+
         case 2:
             cout << "List students selected\n";
             break;
+
         case 3:
             cout << "Search student selected\n";
             break;
+
         case 4:
             cout << "Delete student selected\n";
             break;
+
         case 5:
             cout << "Program finished.\n";
             break;
+
         default:
             cout << "Invalid choice!\n";
         }
