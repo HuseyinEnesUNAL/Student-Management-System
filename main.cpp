@@ -102,10 +102,28 @@ int main() {
     break;
 }
 
-        case 4:
-            cout << "Delete student selected\n";
-            break;
+        case 4: {
+    int deleteId;
+    bool found = false;
 
+    cout << "Enter student ID to delete: ";
+    cin >> deleteId;
+
+    for (int i = 0; i < students.size(); i++) {
+        if (students[i].id == deleteId) {
+            students.erase(students.begin() + i);
+            cout << "Student deleted successfully.\n";
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        cout << "Student not found.\n";
+    }
+
+    break;
+}
         case 5:
             cout << "Program finished.\n";
             break;
