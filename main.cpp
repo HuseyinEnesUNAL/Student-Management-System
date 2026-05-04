@@ -76,10 +76,31 @@ int main() {
     }
     break;
 }
+    case 3: {
+    int searchId;
+    bool found = false;
 
-        case 3:
-            cout << "Search student selected\n";
+    cout << "Enter student ID to search: ";
+    cin >> searchId;
+
+    for (int i = 0; i < students.size(); i++) {
+        if (students[i].id == searchId) {
+            cout << "\nStudent found:\n";
+            cout << "ID: " << students[i].id << endl;
+            cout << "Name: " << students[i].name << endl;
+            cout << "Department: " << students[i].department << endl;
+            cout << "Grade: " << students[i].grade << endl;
+            found = true;
             break;
+        }
+    }
+
+    if (!found) {
+        cout << "Student not found.\n";
+    }
+
+    break;
+}
 
         case 4:
             cout << "Delete student selected\n";
